@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/header';
@@ -9,8 +8,8 @@ import NotFound from './views/NotFound';
 import PostList from './components/postList';
 import PostDetail from './views/PostDetail';
 import InteractiveComponent from './components/InteractiveComponent';
-import CreatePost from './views/CreatePost'; // Nueva vista
-import Comments from './views/Comments'; // Nueva vista
+import CreatePost from './views/CreatePost';
+import Comments from './views/Comments';
 
 const App = () => {
   return (
