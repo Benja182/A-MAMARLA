@@ -4,7 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
-const errorHandler = require('./middlewares/errorHandler');
+const errorHandler = require('../middlewares/errorHandler');
 
 dotenv.config();
 
@@ -24,13 +24,13 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => console.log('Connected to MongoDB'));
 
 // Rutas
-const userRoutes = require('./routes/userRoutes');
-const postRoutes = require('./routes/postRoutes');
-const commentRoutes = require('./routes/commentRoutes');
+const userRoutes = require('../routes/userRoutes');
+const postRoutes = require('../routes/postRoutes');
+const commentRoutes = require('../routes/commentRoutes');
 
 app.use(errorHandler);
 
-app.use('/api/posts', require('./middlewares/validationMiddleware'));
+app.use('/api/posts', require('../middlewares/validationMiddleware'));
 
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
